@@ -78,5 +78,14 @@ namespace FindeDieExe
 
             // textBoxSuchtext.Text
         }
+
+        private void ÖffnenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var zweitesFenster = new ZweitesFenster(42);
+
+            // zweitesFenster.Show();
+            zweitesFenster.ShowDialog();
+            MessageBox.Show(zweitesFenster.Ergebnis);
+        }
     }
 }
