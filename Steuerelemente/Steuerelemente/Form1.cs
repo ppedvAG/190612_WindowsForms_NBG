@@ -16,5 +16,15 @@ namespace Steuerelemente
         {
             InitializeComponent();
         }
+
+        private void ButtonHalloWelt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hallo Welt");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 1;
+        }
     }
 }
