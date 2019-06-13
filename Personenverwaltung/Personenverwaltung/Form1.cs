@@ -18,7 +18,10 @@ namespace Personenverwaltung
         public Form1()
         {
             InitializeComponent();
+            dataGridViewPersonen.AutoGenerateColumns = false;
         }
+
+        BindingList<Person> personen; // BindingList trägt alle Wertänderungen automatisch im UI ein und umgekehrt
 
         private void ButtonEinfügen_Click(object sender, EventArgs e)
         {
@@ -73,13 +76,13 @@ namespace Personenverwaltung
             if (dlgResult == DialogResult.Cancel)
                 return;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Person>));
             FileStream stream = new FileStream(dlg.FileName, FileMode.Create);
 
-            var personen = new Person[listBoxPersonen.Items.Count];
-            for (int i = 0; i < personen.Length; i++)
+            var personen = new List<Person>();
+            foreach (var person in listBoxPersonen.Items)
             {
-                personen[i] = (Person)listBoxPersonen.Items[i];
+                personen.Add((Person)person);
             }
 
             serializer.Serialize(stream, personen);
@@ -98,10 +101,10 @@ namespace Personenverwaltung
             if (dlgResult == DialogResult.Cancel)
                 return;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Person>));
             FileStream stream = new FileStream(dlg.FileName, FileMode.Open);
 
-            var deserialisiert = (Person[])serializer.Deserialize(stream);
+            personen = new BindingList<Person>((List<Person>)serializer.Deserialize(stream));
 
             // listBoxPersonen.DataSource = deserialisiert;
 
@@ -110,11 +113,12 @@ namespace Personenverwaltung
             if (result == DialogResult.Yes)
                 listBoxPersonen.Items.Clear(); // Löschen 
 
-            foreach (var person in deserialisiert)
+            foreach (var person in personen)
             {
                 listBoxPersonen.Items.Add(person);
             }
 
+            dataGridViewPersonen.DataSource = personen;
 
             stream.Close();
         }
@@ -139,6 +143,16 @@ namespace Personenverwaltung
         {
             // 3) Validierung antriggern
             ValidateChildren();
+        }
+
+        private void ButtonMachWas_Click(object sender, EventArgs e)
+        {
+            personen[0].Vorname = "NEUER VORNAME";
+
+            // Wertänderung auch im UI anzeigen:
+            // Hack:
+            // dataGridViewPersonen.DataSource = null;
+            // dataGridViewPersonen.DataSource = personen;
         }
     }
 }

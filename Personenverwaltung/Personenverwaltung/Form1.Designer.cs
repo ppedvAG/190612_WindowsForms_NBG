@@ -35,6 +35,9 @@
             this.xMLImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonMachWas = new System.Windows.Forms.Button();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonEinfügen = new System.Windows.Forms.Button();
             this.checkBoxGeschlecht = new System.Windows.Forms.CheckBox();
             this.numericUpDownAlter = new System.Windows.Forms.NumericUpDown();
@@ -45,16 +48,24 @@
             this.labelNachname = new System.Windows.Forms.Label();
             this.textBoxVorname = new System.Windows.Forms.TextBox();
             this.labelVorname = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.listBoxPersonen = new System.Windows.Forms.ListBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewPersonen = new System.Windows.Forms.DataGridView();
             this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Vorname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kontostand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlter)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,6 +117,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonMachWas);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxEmail);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.buttonEinfügen);
@@ -121,10 +133,38 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listBoxPersonen);
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 426);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // buttonMachWas
+            // 
+            this.buttonMachWas.Location = new System.Drawing.Point(104, 255);
+            this.buttonMachWas.Name = "buttonMachWas";
+            this.buttonMachWas.Size = new System.Drawing.Size(132, 23);
+            this.buttonMachWas.TabIndex = 14;
+            this.buttonMachWas.Text = "Verändere was ...";
+            this.buttonMachWas.UseVisualStyleBackColor = true;
+            this.buttonMachWas.Click += new System.EventHandler(this.ButtonMachWas_Click);
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(81, 202);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(155, 20);
+            this.textBoxEmail.TabIndex = 13;
+            this.textBoxEmail.Leave += new System.EventHandler(this.TextBoxEmail_Leave);
+            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxEmail_Validating);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "EMail:";
             // 
             // buttonEinfügen
             // 
@@ -216,36 +256,75 @@
             this.labelVorname.TabIndex = 0;
             this.labelVorname.Text = "Vorname:";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(530, 426);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.listBoxPersonen);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(522, 400);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "ListBox";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // listBoxPersonen
             // 
             this.listBoxPersonen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxPersonen.FormattingEnabled = true;
-            this.listBoxPersonen.Location = new System.Drawing.Point(0, 0);
+            this.listBoxPersonen.Location = new System.Drawing.Point(3, 3);
             this.listBoxPersonen.Name = "listBoxPersonen";
-            this.listBoxPersonen.Size = new System.Drawing.Size(530, 426);
+            this.listBoxPersonen.Size = new System.Drawing.Size(516, 394);
             this.listBoxPersonen.TabIndex = 0;
             // 
-            // textBoxEmail
+            // tabPage2
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(81, 202);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(155, 20);
-            this.textBoxEmail.TabIndex = 13;
-            this.textBoxEmail.Leave += new System.EventHandler(this.TextBoxEmail_Leave);
-            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxEmail_Validating);
+            this.tabPage2.Controls.Add(this.dataGridViewPersonen);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(522, 400);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "DataGrid";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // dataGridViewPersonen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "EMail:";
+            this.dataGridViewPersonen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPersonen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Vorname,
+            this.Kontostand});
+            this.dataGridViewPersonen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewPersonen.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewPersonen.Name = "dataGridViewPersonen";
+            this.dataGridViewPersonen.Size = new System.Drawing.Size(516, 394);
+            this.dataGridViewPersonen.TabIndex = 0;
             // 
             // errorProviderEmail
             // 
             this.errorProviderEmail.ContainerControl = this;
+            // 
+            // Vorname
+            // 
+            this.Vorname.DataPropertyName = "Vorname";
+            this.Vorname.HeaderText = "Vorname";
+            this.Vorname.Name = "Vorname";
+            // 
+            // Kontostand
+            // 
+            this.Kontostand.DataPropertyName = "Kontostand";
+            this.Kontostand.HeaderText = "Kontostand";
+            this.Kontostand.Name = "Kontostand";
             // 
             // Form1
             // 
@@ -265,6 +344,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlter)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,6 +376,13 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProviderEmail;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridViewPersonen;
+        private System.Windows.Forms.Button buttonMachWas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vorname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kontostand;
     }
 }
 
