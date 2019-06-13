@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Personenverwaltung
 {
@@ -58,6 +60,33 @@ namespace Personenverwaltung
             p.Geschlecht = checkBoxGeschlecht.Checked;
 
             listBoxPersonen.Items.Add(p);
+        }
+
+        private void XMLExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
+            FileStream stream = new FileStream("data.xml", FileMode.Create);
+
+            var personen = new Person[listBoxPersonen.Items.Count];
+            for (int i = 0; i < personen.Length; i++)
+            {
+                personen[i] = (Person)listBoxPersonen.Items[i];
+            }
+
+            serializer.Serialize(stream, personen);
+            stream.Close();
+        }
+
+        private void XMLImportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
+            FileStream stream = new FileStream("data.xml", FileMode.Open);
+
+            var deserialisiert = (Person[])serializer.Deserialize(stream);
+
+            listBoxPersonen.DataSource = deserialisiert;
+
+            stream.Close();
         }
     }
 }

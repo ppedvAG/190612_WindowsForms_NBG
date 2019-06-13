@@ -43,6 +43,8 @@
             this.checkBoxGeschlecht = new System.Windows.Forms.CheckBox();
             this.buttonEinfügen = new System.Windows.Forms.Button();
             this.listBoxPersonen = new System.Windows.Forms.ListBox();
+            this.xMLExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,6 +92,9 @@
             // 
             // dateiToolStripMenuItem
             // 
+            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xMLExportToolStripMenuItem,
+            this.xMLImportToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
@@ -198,6 +203,20 @@
             this.listBoxPersonen.Size = new System.Drawing.Size(530, 426);
             this.listBoxPersonen.TabIndex = 0;
             // 
+            // xMLExportToolStripMenuItem
+            // 
+            this.xMLExportToolStripMenuItem.Name = "xMLExportToolStripMenuItem";
+            this.xMLExportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xMLExportToolStripMenuItem.Text = "XML Export";
+            this.xMLExportToolStripMenuItem.Click += new System.EventHandler(this.XMLExportToolStripMenuItem_Click);
+            // 
+            // xMLImportToolStripMenuItem
+            // 
+            this.xMLImportToolStripMenuItem.Name = "xMLImportToolStripMenuItem";
+            this.xMLImportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xMLImportToolStripMenuItem.Text = "XML Import";
+            this.xMLImportToolStripMenuItem.Click += new System.EventHandler(this.XMLImportToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +257,8 @@
         private System.Windows.Forms.TextBox textBoxVorname;
         private System.Windows.Forms.Label labelVorname;
         private System.Windows.Forms.ListBox listBoxPersonen;
+        private System.Windows.Forms.ToolStripMenuItem xMLExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xMLImportToolStripMenuItem;
     }
 }
 
