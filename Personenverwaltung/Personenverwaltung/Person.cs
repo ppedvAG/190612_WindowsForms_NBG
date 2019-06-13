@@ -13,5 +13,13 @@ namespace Personenverwaltung
         public byte Alter { get; set; }
         public decimal Kontostand { get; set; }
         public bool Geschlecht { get; set; }
+
+        public override string ToString()
+        {
+            if(Geschlecht)
+                return Vorname + " " + Nachname + ", Männlich";
+            else
+                return Vorname + " " + Nachname + ", Weiblich";
+        }
     }
 }

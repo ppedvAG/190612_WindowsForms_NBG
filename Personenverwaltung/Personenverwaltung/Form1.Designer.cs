@@ -32,9 +32,23 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelVorname = new System.Windows.Forms.Label();
+            this.textBoxVorname = new System.Windows.Forms.TextBox();
+            this.textBoxNachname = new System.Windows.Forms.TextBox();
+            this.labelNachname = new System.Windows.Forms.Label();
+            this.labelAlter = new System.Windows.Forms.Label();
+            this.textBoxKontostand = new System.Windows.Forms.TextBox();
+            this.labelKontostand = new System.Windows.Forms.Label();
+            this.numericUpDownAlter = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxGeschlecht = new System.Windows.Forms.CheckBox();
+            this.buttonEinfügen = new System.Windows.Forms.Button();
+            this.listBoxPersonen = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlter)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -53,6 +67,23 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonEinfügen);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBoxGeschlecht);
+            this.splitContainer1.Panel1.Controls.Add(this.numericUpDownAlter);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxKontostand);
+            this.splitContainer1.Panel1.Controls.Add(this.labelKontostand);
+            this.splitContainer1.Panel1.Controls.Add(this.labelAlter);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxNachname);
+            this.splitContainer1.Panel1.Controls.Add(this.labelNachname);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxVorname);
+            this.splitContainer1.Panel1.Controls.Add(this.labelVorname);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.listBoxPersonen);
             this.splitContainer1.Size = new System.Drawing.Size(800, 426);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 1;
@@ -69,6 +100,104 @@
             this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
+            // labelVorname
+            // 
+            this.labelVorname.AutoSize = true;
+            this.labelVorname.Location = new System.Drawing.Point(12, 30);
+            this.labelVorname.Name = "labelVorname";
+            this.labelVorname.Size = new System.Drawing.Size(52, 13);
+            this.labelVorname.TabIndex = 0;
+            this.labelVorname.Text = "Vorname:";
+            // 
+            // textBoxVorname
+            // 
+            this.textBoxVorname.Location = new System.Drawing.Point(81, 27);
+            this.textBoxVorname.Name = "textBoxVorname";
+            this.textBoxVorname.Size = new System.Drawing.Size(155, 20);
+            this.textBoxVorname.TabIndex = 1;
+            // 
+            // textBoxNachname
+            // 
+            this.textBoxNachname.Location = new System.Drawing.Point(81, 53);
+            this.textBoxNachname.Name = "textBoxNachname";
+            this.textBoxNachname.Size = new System.Drawing.Size(155, 20);
+            this.textBoxNachname.TabIndex = 3;
+            // 
+            // labelNachname
+            // 
+            this.labelNachname.AutoSize = true;
+            this.labelNachname.Location = new System.Drawing.Point(13, 56);
+            this.labelNachname.Name = "labelNachname";
+            this.labelNachname.Size = new System.Drawing.Size(62, 13);
+            this.labelNachname.TabIndex = 2;
+            this.labelNachname.Text = "Nachname:";
+            // 
+            // labelAlter
+            // 
+            this.labelAlter.AutoSize = true;
+            this.labelAlter.Location = new System.Drawing.Point(12, 82);
+            this.labelAlter.Name = "labelAlter";
+            this.labelAlter.Size = new System.Drawing.Size(31, 13);
+            this.labelAlter.TabIndex = 4;
+            this.labelAlter.Text = "Alter:";
+            // 
+            // textBoxKontostand
+            // 
+            this.textBoxKontostand.Location = new System.Drawing.Point(81, 105);
+            this.textBoxKontostand.Name = "textBoxKontostand";
+            this.textBoxKontostand.Size = new System.Drawing.Size(155, 20);
+            this.textBoxKontostand.TabIndex = 7;
+            // 
+            // labelKontostand
+            // 
+            this.labelKontostand.AutoSize = true;
+            this.labelKontostand.Location = new System.Drawing.Point(12, 108);
+            this.labelKontostand.Name = "labelKontostand";
+            this.labelKontostand.Size = new System.Drawing.Size(64, 13);
+            this.labelKontostand.TabIndex = 6;
+            this.labelKontostand.Text = "Kontostand:";
+            // 
+            // numericUpDownAlter
+            // 
+            this.numericUpDownAlter.Location = new System.Drawing.Point(81, 80);
+            this.numericUpDownAlter.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownAlter.Name = "numericUpDownAlter";
+            this.numericUpDownAlter.Size = new System.Drawing.Size(155, 20);
+            this.numericUpDownAlter.TabIndex = 9;
+            // 
+            // checkBoxGeschlecht
+            // 
+            this.checkBoxGeschlecht.AutoSize = true;
+            this.checkBoxGeschlecht.Location = new System.Drawing.Point(156, 131);
+            this.checkBoxGeschlecht.Name = "checkBoxGeschlecht";
+            this.checkBoxGeschlecht.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxGeschlecht.TabIndex = 10;
+            this.checkBoxGeschlecht.Text = "Geschlecht";
+            this.checkBoxGeschlecht.UseVisualStyleBackColor = true;
+            // 
+            // buttonEinfügen
+            // 
+            this.buttonEinfügen.Location = new System.Drawing.Point(16, 154);
+            this.buttonEinfügen.Name = "buttonEinfügen";
+            this.buttonEinfügen.Size = new System.Drawing.Size(220, 23);
+            this.buttonEinfügen.TabIndex = 11;
+            this.buttonEinfügen.Text = "Einfügen";
+            this.buttonEinfügen.UseVisualStyleBackColor = true;
+            this.buttonEinfügen.Click += new System.EventHandler(this.ButtonEinfügen_Click);
+            // 
+            // listBoxPersonen
+            // 
+            this.listBoxPersonen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxPersonen.FormattingEnabled = true;
+            this.listBoxPersonen.Location = new System.Drawing.Point(0, 0);
+            this.listBoxPersonen.Name = "listBoxPersonen";
+            this.listBoxPersonen.Size = new System.Drawing.Size(530, 426);
+            this.listBoxPersonen.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,8 +210,12 @@
             this.Text = "Personenverwaltung";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +227,17 @@
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button buttonEinfügen;
+        private System.Windows.Forms.CheckBox checkBoxGeschlecht;
+        private System.Windows.Forms.NumericUpDown numericUpDownAlter;
+        private System.Windows.Forms.TextBox textBoxKontostand;
+        private System.Windows.Forms.Label labelKontostand;
+        private System.Windows.Forms.Label labelAlter;
+        private System.Windows.Forms.TextBox textBoxNachname;
+        private System.Windows.Forms.Label labelNachname;
+        private System.Windows.Forms.TextBox textBoxVorname;
+        private System.Windows.Forms.Label labelVorname;
+        private System.Windows.Forms.ListBox listBoxPersonen;
     }
 }
 
