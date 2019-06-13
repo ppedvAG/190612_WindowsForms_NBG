@@ -64,8 +64,16 @@ namespace Personenverwaltung
 
         private void XMLExportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var dlg = new SaveFileDialog();
+            dlg.Title = "Specherort für die XML-Datei";
+            dlg.Filter = "XML | *.xml";
+
+            var dlgResult = dlg.ShowDialog();
+            if (dlgResult == DialogResult.Cancel)
+                return;
+
             XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
-            FileStream stream = new FileStream("data.xml", FileMode.Create);
+            FileStream stream = new FileStream(dlg.FileName, FileMode.Create);
 
             var personen = new Person[listBoxPersonen.Items.Count];
             for (int i = 0; i < personen.Length; i++)
@@ -79,8 +87,16 @@ namespace Personenverwaltung
 
         private void XMLImportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var dlg = new OpenFileDialog();
+            dlg.Title = "XML Datei für den Import auswählen";
+            dlg.Filter = "XML | *.xml";
+
+            var dlgResult = dlg.ShowDialog();
+            if (dlgResult == DialogResult.Cancel)
+                return;
+
             XmlSerializer serializer = new XmlSerializer(typeof(Person[]));
-            FileStream stream = new FileStream("data.xml", FileMode.Open);
+            FileStream stream = new FileStream(dlg.FileName, FileMode.Open);
 
             var deserialisiert = (Person[])serializer.Deserialize(stream);
 
@@ -88,7 +104,7 @@ namespace Personenverwaltung
 
             var result = MessageBox.Show("Wollen Sie die aktuellen Datensätze überschreiben?", "Inhalt löschen", MessageBoxButtons.YesNo);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
                 listBoxPersonen.Items.Clear(); // Löschen 
 
             foreach (var person in deserialisiert)
