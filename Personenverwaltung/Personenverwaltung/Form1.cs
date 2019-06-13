@@ -84,7 +84,18 @@ namespace Personenverwaltung
 
             var deserialisiert = (Person[])serializer.Deserialize(stream);
 
-            listBoxPersonen.DataSource = deserialisiert;
+            // listBoxPersonen.DataSource = deserialisiert;
+
+            var result = MessageBox.Show("Wollen Sie die aktuellen Datensätze überschreiben?", "Inhalt löschen", MessageBoxButtons.YesNo);
+
+            if(result == DialogResult.Yes)
+                listBoxPersonen.Items.Clear(); // Löschen 
+
+            foreach (var person in deserialisiert)
+            {
+                listBoxPersonen.Items.Add(person);
+            }
+
 
             stream.Close();
         }
