@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -116,6 +117,28 @@ namespace Personenverwaltung
 
 
             stream.Close();
+        }
+
+        private void TextBoxEmail_Validating(object sender, CancelEventArgs e)
+        {
+            // 1) ErrorProvider in das Formular hineinziehen
+            // 2) Im gewünschten Element das Validating-Event nutzen
+            // String mit @ davor (zb @"Hallo Welt") verhindert, dass backslash wie zb "\n" als Steuerzeichen gewertet wird
+
+            if(Regex.IsMatch(textBoxEmail.Text, @"[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}") == false)
+            {
+                errorProviderEmail.SetError(textBoxEmail, "Email ungültig");
+            }
+            else
+            {
+                errorProviderEmail.SetError(textBoxEmail, "");
+            }
+        }
+
+        private void TextBoxEmail_Leave(object sender, EventArgs e)
+        {
+            // 3) Validierung antriggern
+            ValidateChildren();
         }
     }
 }
