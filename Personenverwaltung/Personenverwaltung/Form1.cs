@@ -87,6 +87,8 @@ namespace Personenverwaltung
 
         private void XMLImportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // FolderBrowserDialog dlg = new FolderBrowserDialog();
+
             var dlg = new OpenFileDialog();
             dlg.Title = "XML Datei für den Import auswählen";
             dlg.Filter = "XML | *.xml";
