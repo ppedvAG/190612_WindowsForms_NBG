@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 266);
+            this.ClientSize = new System.Drawing.Size(300, 266);
             this.Controls.Add(this.buttonTimer);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.progressBarWert);

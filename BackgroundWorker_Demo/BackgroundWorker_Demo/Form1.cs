@@ -67,5 +67,24 @@ namespace BackgroundWorker_Demo
         {
             timer.Start();
         }
+
+        /*
+         * Oberfläche:
+         * 
+         * 
+         * 
+         * 
+         * TextBox, Button, ListBox
+         * 
+         * "IT-Support Mitarbeiter"
+         * TextBox.Text definiert das Ticket, zb "Drucker reparieren"
+         * Button "Ticket erstellen" wird dieses Ticket erstellt und in die ListBox eingefügt
+         * "IT-Mitarbeiter" -> Timer... alle 3 Sec nach, ob in der ListBox Tickets drinnen sind
+         * 
+         * Wenn weniger als 3 Tickets in der Listbox sind -> MsgBox "es ist nix zu tun"
+         * Wenn mehr als 3 Tickets in der Listbox sind -> 2 abgearbeitet
+         * 
+         */ 
+
     }
 }
