@@ -16,15 +16,25 @@ namespace BackgroundWorker_Demo
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private void ButtonEinfügen_Click(object sender, EventArgs e)
+            worker = new BackgroundWorker();
+            worker.DoWork += Worker_DoWork;
+        }
+        BackgroundWorker worker;
+
+        private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 0; i <= 100; i++)
             {
                 Thread.Sleep(100);
-                progressBarWert.Value = i;
+                // progressBarWert.Value = i; // Zugriff auf ein Steuerelement
+                // Fehler: Workerthread darf nicht auf Objekte vom UI-Thread zugreifen (in diesem Fall die ProgressBar)
             }
+        }
+
+        private void ButtonEinfügen_Click(object sender, EventArgs e)
+        {
+            worker.RunWorkerAsync(); // worker starten
         }
     }
 }
