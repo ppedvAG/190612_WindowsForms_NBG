@@ -16,5 +16,16 @@ namespace Banksystem
         {
             InitializeComponent();
         }
+
+        private void ButtonLogin_Click(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "user" && textBoxPasswort.Text == "passwort")
+            {
+                Startseite s2 = new Startseite();
+                s2.ShowDialog();
+            }
+            else
+                MessageBox.Show("Username oder Passwort falsch...");
+        }
     }
 }
