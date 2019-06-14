@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonEinfügen = new System.Windows.Forms.Button();
             this.progressBarWert = new System.Windows.Forms.ProgressBar();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -121,11 +122,23 @@
             this.progressBarWert.Size = new System.Drawing.Size(250, 14);
             this.progressBarWert.TabIndex = 9;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(43, 235);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(128, 21);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "UI Aktualisieren";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 266);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.progressBarWert);
             this.Controls.Add(this.buttonEinfügen);
             this.Controls.Add(this.textBox4);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonEinfügen;
         private System.Windows.Forms.ProgressBar progressBarWert;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
