@@ -15,6 +15,9 @@ namespace UserControl
         public Form1()
         {
             InitializeComponent();
+            var ci = new System.Globalization.CultureInfo("en");
+            System.Resources.ResourceManager rm = new System.Resources.ResourceManager("UserControl.Properties.Resources", typeof(Form1).Assembly);
+            label1.Text = rm.GetString("Greeting",ci);
         }
     }
 }
