@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.buttonEinfügen = new System.Windows.Forms.Button();
             this.progressBarWert = new System.Windows.Forms.ProgressBar();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.buttonTimer = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -133,11 +136,22 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
+            // buttonTimer
+            // 
+            this.buttonTimer.Location = new System.Drawing.Point(197, 231);
+            this.buttonTimer.Name = "buttonTimer";
+            this.buttonTimer.Size = new System.Drawing.Size(71, 26);
+            this.buttonTimer.TabIndex = 11;
+            this.buttonTimer.Text = "Timer";
+            this.buttonTimer.UseVisualStyleBackColor = true;
+            this.buttonTimer.Click += new System.EventHandler(this.ButtonTimer_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 266);
+            this.Controls.Add(this.buttonTimer);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.progressBarWert);
             this.Controls.Add(this.buttonEinfügen);
@@ -169,6 +183,8 @@
         private System.Windows.Forms.Button buttonEinfügen;
         private System.Windows.Forms.ProgressBar progressBarWert;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button buttonTimer;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
