@@ -45,5 +45,16 @@ namespace Banksystem
                 MessageBox.Show("Der User ist leider nicht vorhanden");
             }
         }
+
+        private void ButtonKontoAnlegen_Click(object sender, EventArgs e)
+        {
+            Konto neu = new Konto(0);
+            neu.Username = textBoxUsername.Text;
+            neu.Passwort = textBoxPasswort.Text;
+
+            verfügbarenKonten.Add(neu);
+
+            MessageBox.Show("Das neue Konto wurde soeben erstellt.");
+        }
     }
 }

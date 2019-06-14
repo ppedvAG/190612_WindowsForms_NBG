@@ -34,6 +34,7 @@
             this.textBoxPasswort = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonKontoAnlegen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -89,11 +90,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "GeldGeier AG";
             // 
+            // buttonKontoAnlegen
+            // 
+            this.buttonKontoAnlegen.Location = new System.Drawing.Point(155, 155);
+            this.buttonKontoAnlegen.Name = "buttonKontoAnlegen";
+            this.buttonKontoAnlegen.Size = new System.Drawing.Size(100, 21);
+            this.buttonKontoAnlegen.TabIndex = 6;
+            this.buttonKontoAnlegen.Text = "Register";
+            this.buttonKontoAnlegen.UseVisualStyleBackColor = true;
+            this.buttonKontoAnlegen.Click += new System.EventHandler(this.ButtonKontoAnlegen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 188);
+            this.Controls.Add(this.buttonKontoAnlegen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPasswort);
@@ -116,6 +128,7 @@
         private System.Windows.Forms.TextBox textBoxPasswort;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonKontoAnlegen;
     }
 }
 
