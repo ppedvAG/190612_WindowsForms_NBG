@@ -1,1 +1,16 @@
 https://snipper.io/s/-Lh9hfeDsn7fWkr1VKx0
+
+STRG + R + R => Umbenennen von Klassen/Methoden/Variablen etc...
+STRG + K + D => Einrücken
+ALT Rauf/Runter => Zeile Code verschieben
+
+
+System.Diagnostics.Process.Start("cmd.exe", "/c start echo ich mache etwas");
+
+
+Praktische Links:
+http://visualstudioshortcuts.com/2017/
+https://regexr.com/
+Email-Regexpattern:   [a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}
+
+
