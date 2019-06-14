@@ -79,6 +79,7 @@
             this.buttonEinzahlen.TabIndex = 4;
             this.buttonEinzahlen.Text = "Einzahlen";
             this.buttonEinzahlen.UseVisualStyleBackColor = true;
+            this.buttonEinzahlen.Click += new System.EventHandler(this.ButtonEinzahlen_Click);
             // 
             // buttonAbheben
             // 
@@ -88,20 +89,21 @@
             this.buttonAbheben.TabIndex = 5;
             this.buttonAbheben.Text = "Abheben";
             this.buttonAbheben.UseVisualStyleBackColor = true;
+            this.buttonAbheben.Click += new System.EventHandler(this.ButtonAbheben_Click);
             // 
             // listBoxTransaktionen
             // 
             this.listBoxTransaktionen.FormattingEnabled = true;
             this.listBoxTransaktionen.Location = new System.Drawing.Point(213, 34);
             this.listBoxTransaktionen.Name = "listBoxTransaktionen";
-            this.listBoxTransaktionen.Size = new System.Drawing.Size(156, 199);
+            this.listBoxTransaktionen.Size = new System.Drawing.Size(451, 199);
             this.listBoxTransaktionen.TabIndex = 6;
             // 
             // Startseite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 267);
+            this.ClientSize = new System.Drawing.Size(676, 267);
             this.Controls.Add(this.listBoxTransaktionen);
             this.Controls.Add(this.buttonAbheben);
             this.Controls.Add(this.buttonEinzahlen);
